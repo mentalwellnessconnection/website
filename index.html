@@ -62,22 +62,30 @@
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-6">
-            <span class="eyebrow" style="color:#CFE3E2;">Mental Wellness Connection</span>
-            <h1 class="mb-3">Breaking Barriers. Building Hope. Connecting Care.</h1>
-            <p class="lead mb-4">We help Arkansans access outpatient mental health care when cost, insurance, or access stand in the way — through counseling vouchers, graduate counseling interns, and a statewide network of provider partners.</p>
-            <div class="d-flex flex-wrap gap-3">
-              <a href="get-help.html" class="btn btn-mwc-primary btn-lg">Get Help</a>
-              <a href="donate.html" class="btn btn-mwc-secondary btn-lg">Donate Now</a>
+            <div class="hero-copy">
+              <span class="eyebrow on-dark">Mental Wellness Connection</span>
+              <h1 class="mb-3">Breaking Barriers. Building Hope. Connecting Care.</h1>
+              <p class="lead mb-4">We help Arkansans access outpatient mental health care when cost, insurance, or access stand in the way — through counseling vouchers, graduate counseling interns, and a statewide network of provider partners.</p>
+              <div class="d-flex flex-wrap gap-3 hero-actions">
+                <a href="get-help.html" class="btn btn-mwc-primary btn-lg">Get Help</a>
+                <a href="donate.html" class="btn btn-mwc-secondary btn-lg">Donate Now</a>
+              </div>
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="hero-image-slot">
-              Photo placeholder: warm, candid image of a counseling session or community moment (1200×900px)
+            <!-- Swap for real photography: warm, candid counseling or community moment, 1200×900px -->
+            <div class="hero-image-slot illustration-panel illustration-warm float-accent" aria-hidden="true">
+              <span class="blob"></span><span class="blob"></span>
+              <svg class="mwc-mark" viewBox="0 0 120 120"><use href="images/icons/icons.svg#mark-connect"></use></svg>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,32 C240,60 480,0 720,20 C960,40 1200,60 1440,28 L1440,60 L0,60 Z" fill="#FDFBF8"></path></svg>
+    </div>
 
     <!-- STATS -->
     <section class="section-sm bg-warm-white">
@@ -108,7 +116,7 @@
             </div>
           </div>
         </div>
-        <p class="text-center text-muted mt-4 mb-0" style="font-size:0.85rem;">Program and impact figures will be added as they become available. We report only verified numbers.</p>
+        <p class="text-center text-muted mt-4 mb-0" style="font-size:0.85rem;">We report only figures we can verify, and will share detailed program outcomes here as they become available.</p>
       </div>
     </section>
 
@@ -123,8 +131,10 @@
             <a href="about.html" class="btn btn-mwc-outline mt-2">Read Our Story</a>
           </div>
           <div class="col-lg-6 reveal reveal-delay-1">
-            <div class="img-slot" style="min-height:320px;">
-              Photo placeholder: community outreach or office setting (1000×800px)
+            <!-- Swap for real photography: community outreach or office setting, 1000×800px -->
+            <div class="illustration-panel illustration-soft on-light" style="aspect-ratio:5/4;" aria-hidden="true">
+              <span class="blob"></span><span class="blob"></span>
+              <svg class="mwc-mark" viewBox="0 0 120 120"><use href="images/icons/icons.svg#mark-connect"></use></svg>
             </div>
           </div>
         </div>
@@ -142,7 +152,7 @@
         <div class="row g-4">
           <div class="col-md-6 col-lg-3 reveal">
             <div class="mwc-card">
-              <div class="icon-badge">🎟️</div>
+              <div class="icon-badge"><svg class="icon icon-lg"><use href="images/icons/icons.svg#ticket"></use></svg></div>
               <h3 class="h5">Counseling Vouchers</h3>
               <p>Financial assistance that helps offset the cost of outpatient counseling for eligible individuals.</p>
               <a href="programs.html#vouchers">Learn more &rarr;</a>
@@ -150,7 +160,7 @@
           </div>
           <div class="col-md-6 col-lg-3 reveal reveal-delay-1">
             <div class="mwc-card">
-              <div class="icon-badge teal">🎓</div>
+              <div class="icon-badge teal"><svg class="icon icon-lg"><use href="images/icons/icons.svg#graduation"></use></svg></div>
               <h3 class="h5">Graduate Counseling Interns</h3>
               <p>Supervised graduate students provide affordable counseling while training as future professionals.</p>
               <a href="programs.html#internship-program">Learn more &rarr;</a>
@@ -158,7 +168,7 @@
           </div>
           <div class="col-md-6 col-lg-3 reveal reveal-delay-2">
             <div class="mwc-card">
-              <div class="icon-badge green">🤝</div>
+              <div class="icon-badge green"><svg class="icon icon-lg"><use href="images/icons/icons.svg#handshake"></use></svg></div>
               <h3 class="h5">Provider Partner Network</h3>
               <p>Licensed clinicians across Arkansas accept referrals, offer vouchers, and supervise interns.</p>
               <a href="programs.html#provider-network">Learn more &rarr;</a>
@@ -166,7 +176,7 @@
           </div>
           <div class="col-md-6 col-lg-3 reveal reveal-delay-3">
             <div class="mwc-card">
-              <div class="icon-badge gold">🧭</div>
+              <div class="icon-badge gold"><svg class="icon icon-lg"><use href="images/icons/icons.svg#compass"></use></svg></div>
               <h3 class="h5">Community Referrals</h3>
               <p>When we can't provide direct services, we help people find the right care and resources faster.</p>
               <a href="programs.html#community-referral">Learn more &rarr;</a>
@@ -207,33 +217,15 @@
       </div>
     </section>
 
-    <!-- TESTIMONIALS -->
+    <!-- OUR COMMITMENT -->
     <section class="section bg-warm-white">
       <div class="container">
-        <div class="text-center mb-5 reveal">
-          <span class="eyebrow">Voices from Our Community</span>
-          <h2>Real Words. Real Impact.</h2>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-4 reveal">
-            <div class="testimonial-card">
+        <div class="row justify-content-center">
+          <div class="col-lg-9 reveal">
+            <div class="commitment-panel">
               <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-              <p>Client and provider testimonials will be added here with written permission. This space is reserved for real, verified stories from the people we serve.</p>
-              <div class="testimonial-name">Testimonial placeholder</div>
-            </div>
-          </div>
-          <div class="col-md-4 reveal reveal-delay-1">
-            <div class="testimonial-card">
-              <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-              <p>Testimonial placeholder — replace with a quote from a program participant, intern, or provider partner once collected.</p>
-              <div class="testimonial-name">Testimonial placeholder</div>
-            </div>
-          </div>
-          <div class="col-md-4 reveal reveal-delay-2">
-            <div class="testimonial-card">
-              <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-              <p>Testimonial placeholder — replace with a quote from a donor or community partner once collected.</p>
-              <div class="testimonial-name">Testimonial placeholder</div>
+              <p class="statement mb-3">We envision an Arkansas where every individual has timely access to compassionate, quality mental health care — regardless of income, insurance status, or geographic location.</p>
+              <span class="commitment-source">Our Vision, Mental Wellness Connection</span>
             </div>
           </div>
         </div>
@@ -257,31 +249,15 @@
       </div>
     </section>
 
-    <!-- PARTNERS -->
-    <section class="section bg-soft-blue">
-      <div class="container">
-        <div class="text-center mb-4 reveal">
-          <span class="eyebrow">Community Partners</span>
-          <h2>Working Together Across Arkansas</h2>
-        </div>
-        <div class="row g-3 align-items-center reveal reveal-delay-1">
-          <div class="col-6 col-md-2"><div class="partner-logo-slot">Partner logo</div></div>
-          <div class="col-6 col-md-2"><div class="partner-logo-slot">Partner logo</div></div>
-          <div class="col-6 col-md-2"><div class="partner-logo-slot">Partner logo</div></div>
-          <div class="col-6 col-md-2"><div class="partner-logo-slot">Partner logo</div></div>
-          <div class="col-6 col-md-2"><div class="partner-logo-slot">Partner logo</div></div>
-          <div class="col-6 col-md-2"><div class="partner-logo-slot">Partner logo</div></div>
-        </div>
-      </div>
-    </section>
-
     <!-- VOLUNTEER -->
     <section class="section bg-warm-white">
       <div class="container">
         <div class="row align-items-center g-5">
           <div class="col-lg-6 reveal">
-            <div class="img-slot" style="min-height:280px;">
-              Photo placeholder: volunteers at a community event (900×700px)
+            <!-- Swap for real photography: volunteers at a community event, 900×700px -->
+            <div class="illustration-panel illustration-teal" style="aspect-ratio:5/4;" aria-hidden="true">
+              <span class="blob"></span><span class="blob"></span>
+              <svg class="mwc-mark" viewBox="0 0 120 120"><use href="images/icons/icons.svg#mark-connect"></use></svg>
             </div>
           </div>
           <div class="col-lg-6 reveal reveal-delay-1">
@@ -293,6 +269,10 @@
         </div>
       </div>
     </section>
+
+    <div class="wave-divider" aria-hidden="true">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,28 C240,0 480,58 720,36 C960,14 1200,44 1440,20 L1440,60 L0,60 Z" fill="#204670"></path></svg>
+    </div>
 
     <!-- NEWS / NEWSLETTER -->
     <section class="section bg-blue-dark">

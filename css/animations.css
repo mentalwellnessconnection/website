@@ -1,0 +1,41 @@
+/* ==========================================================================
+   Mental Wellness Connection — Animation utilities (v2)
+   Respects prefers-reduced-motion (see style.css global override too).
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+
+@keyframes mwc-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.fade-in { animation: mwc-fade-in 0.5s ease both; }
+
+@keyframes mwc-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gentle floating accent used sparingly behind hero/illustration art */
+@keyframes mwc-float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-12px) translateX(4px); }
+}
+.float-accent { animation: mwc-float 7s ease-in-out infinite; }
+.float-accent-slow { animation: mwc-float 10s ease-in-out infinite; animation-delay: 1.5s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .hero .hero-copy > * { animation: none !important; opacity: 1 !important; }
+  .float-accent, .float-accent-slow { animation: none; }
+}
