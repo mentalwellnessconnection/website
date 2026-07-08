@@ -1,0 +1,16 @@
+{
+  "name": "Mental Wellness Connection",
+  "short_name": "MWC",
+  "description": "Breaking Barriers. Building Hope. Connecting Care.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#2C5E91",
+  "icons": [
+    {
+      "src": "images/icons/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
