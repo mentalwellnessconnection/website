@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Donate | Mental Wellness Connection</title>
+  <title>Give | Mental Wellness Connection</title>
   <meta name="description" content="Support Mental Wellness Connection's mission to expand access to outpatient mental health care in Arkansas. Give one-time, monthly, or through corporate sponsorship.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Donate | Mental Wellness Connection">
+  <meta property="og:title" content="Give | Mental Wellness Connection">
   <meta property="og:description" content="Every donation helps remove barriers to mental healthcare in Arkansas.">
   <meta property="og:url" content="https://www.mentalwellnessconnection.org/donate.html">
   <link rel="canonical" href="https://www.mentalwellnessconnection.org/donate.html">
-  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/icons/favicon.png" type="image/png">
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,128 +20,312 @@
   <link href="css/animations.css" rel="stylesheet">
 </head>
 <body data-page="donate">
-  <div id="site-nav"></div>
+    <!-- ============================================================
+         NEW TO THIS FILE? Start with EDITING-GUIDE.md in the project
+         root folder — it has step-by-step instructions for common
+         changes (wording, photos, logo, adding a page, publishing).
+         ============================================================ -->
+
+      <!-- ============================================================
+         SITE NAVIGATION MENU
+         This exact block appears near the top of every page.
+         To add, rename, or remove a menu item, edit the <li> list
+         below on THIS page, then repeat the same edit on all other
+         HTML pages so the menu stays identical site-wide.
+         Full instructions: EDITING-GUIDE.md > "How to Update the
+         Navigation Menu"
+         ============================================================ -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav class="navbar navbar-expand-lg mwc-navbar fixed-top" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <!-- Logo icon — see EDITING-GUIDE.md > "How to Change the Logo" -->
+          <img src="images/logo/mwc-icon.png" alt="" class="brand-mark-img" aria-hidden="true">
+          Mental Wellness Connection
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mwcNav"
+          aria-controls="mwcNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mwcNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" data-nav="about" href="about.html">About</a></li>
+
+            <!-- Dropdown: How We Help -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="howWeHelpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-nav="focus-areas">How We Help</a>
+              <ul class="dropdown-menu" aria-labelledby="howWeHelpDropdown">
+                <li><a class="dropdown-item" href="our-focus-areas.html">Our Focus Areas</a></li>
+                <li><a class="dropdown-item" href="our-focus-areas.html#awareness">Awareness</a></li>
+                <li><a class="dropdown-item" href="our-focus-areas.html#active-living">Active Living</a></li>
+                <li><a class="dropdown-item" href="our-focus-areas.html#access">Access to Care</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" data-nav="get-help" href="get-help.html">Get Help</a></li>
+
+            <!-- Dropdown: Get Involved -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-nav="get-involved">Get Involved</a>
+              <ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
+                <li><a class="dropdown-item" href="volunteer.html">Volunteer</a></li>
+                <li><a class="dropdown-item" href="internships.html">Counseling Internships</a></li>
+                <li><a class="dropdown-item" href="provider-partners.html">Clinical Providers</a></li>
+                <li><a class="dropdown-item" href="provider-partners.html#community-organizations">Community Organizations</a></li>
+                <li><a class="dropdown-item" href="donate.html#sponsorship">Sponsorships</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" data-nav="events" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav="resources" href="resources.html">Resources</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav="donate" href="donate.html">Give</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav="contact" href="contact.html">Contact</a></li>
+            <li class="nav-item nav-cta">
+              <!-- "Give Now" opens the Zeffy giving form in a popup — see EDITING-GUIDE.md
+                   for how to update the Zeffy form link if the campaign URL ever changes. -->
+              <a class="btn btn-mwc-primary btn-sm"
+                 href="https://www.zeffy.com/embed/ticketing/mental-wellness-connection-memberships--2025?modal=true"
+                 zeffy-form-link="https://www.zeffy.com/embed/ticketing/mental-wellness-connection-memberships--2025?modal=true"
+                 rel="noopener">Give Now</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <!-- END SITE NAVIGATION MENU -->
 
   <main id="main-content">
-    <section class="page-header">
-      <div class="container">
-        <span class="eyebrow" style="color:#CFE3E2;">Donate</span>
-        <h1>Every Donation Helps Remove a Barrier to Care</h1>
-        <p class="lead" style="max-width:60ch;">Your generosity helps fund counseling vouchers, graduate internship supervision, community outreach, referral coordination, and mental health awareness across Arkansas.</p>
-      </div>
-    </section>
 
-    <div class="wave-divider" aria-hidden="true">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none"><path d="M0,30 C240,58 480,4 720,24 C960,44 1200,54 1440,26 L1440,60 L0,60 Z" fill="#FDFBF8"></path></svg>
+  <!-- Give Hero -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <div class="col-lg-7">
+          <span class="eyebrow">Give</span>
+
+          <h1 class="display-5 fw-bold mb-4">
+            Bring Mental Healthcare Within Reach
+          </h1>
+
+          <p class="lead mb-4">
+            Mental Wellness Connection (MWC) is a 501(c)(3) nonprofit based in Bentonville, Arkansas, working to bring mental healthcare within reach by building awareness, encouraging active living, and expanding access to free and low-cost care for individuals and families facing barriers to care.
+          </p>
+
+          <p>
+            We work to close the gap between Arkansans who need mental healthcare and the care they can actually reach.
+          </p>
+
+          <p>
+            Your generosity helps us expand mental health awareness, create opportunities for community connection, and increase access to meaningful mental health resources and care across Arkansas.
+          </p>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="mwc-card p-4 text-center">
+            <h2 class="h4 mb-3">Your Support Matters</h2>
+            <p class="mb-0">
+              Every gift helps Mental Wellness Connection continue building awareness, encouraging active living, and expanding access to care.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </div>
+  </section>
 
 
-    <!-- GIVING TIERS -->
-    <section class="section bg-warm-white">
-      <div class="container">
-        <div class="text-center mb-5 reveal">
-          <span class="eyebrow">Your Impact</span>
-          <h2>What Your Gift Can Support</h2>
-          <p class="text-muted mx-auto" style="max-width:600px;">Impact examples reflect program costs — actual allocation depends on current needs and available funding.</p>
+  <!-- Impact Areas -->
+  <section class="py-5 bg-light">
+    <div class="container">
+
+      <div class="text-center mb-5">
+        <span class="eyebrow">Your Impact</span>
+        <h2 class="mb-3">What Your Gift Supports</h2>
+        <p>
+          Across Arkansas, many individuals and families face barriers that make outpatient mental healthcare difficult to obtain. Your support helps reduce those barriers.
+        </p>
+      </div>
+
+
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="mwc-card h-100 p-4">
+
+            <h3 class="h4">
+              Awareness
+            </h3>
+
+            <p>
+              Building mental health awareness of needs, resources, and solutions.
+            </p>
+
+            <p class="mb-0">
+              We help individuals and communities better understand mental health, reduce stigma, recognize when support is needed, and connect with meaningful resources.
+            </p>
+
+          </div>
         </div>
-        <div class="row g-3">
-          <div class="col-6 col-md-4 col-lg-2 reveal">
-            <div class="donate-tier"><div class="amount">$50</div><p class="small mb-0">Helps cover partial session costs for someone in need</p></div>
+
+
+        <div class="col-md-4">
+          <div class="mwc-card h-100 p-4">
+
+            <h3 class="h4">
+              Active Living
+            </h3>
+
+            <p>
+              Encouraging movement, healthy habits, and community connection that strengthen mental wellness.
+            </p>
+
+            <p class="mb-0">
+              Through community wellness events and activities, we promote active living as an important part of overall mental health and create opportunities for people to connect with others.
+            </p>
+
           </div>
-          <div class="col-6 col-md-4 col-lg-2 reveal reveal-delay-1">
-            <div class="donate-tier"><div class="amount">$100</div><p class="small mb-0">Supports a counseling voucher toward a full session</p></div>
+        </div>
+
+
+        <div class="col-md-4">
+          <div class="mwc-card h-100 p-4">
+
+            <h3 class="h4">
+              Access to Care
+            </h3>
+
+            <p>
+              Expanding access to free and low-cost mental healthcare.
+            </p>
+
+            <p class="mb-0">
+              We reduce financial, geographic, and logistical barriers to outpatient counseling through counseling vouchers, community partnerships, supervised counseling interns, and a growing network of mental health resources.
+            </p>
+
           </div>
-          <div class="col-6 col-md-4 col-lg-2 reveal reveal-delay-2">
-            <div class="donate-tier"><div class="amount">$250</div><p class="small mb-0">Helps fund a month of intern clinical supervision</p></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Zeffy Donation Form -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="text-center mb-4">
+        <span class="eyebrow">Make a Gift</span>
+
+        <h2>
+          Support Mental Wellness Connection
+        </h2>
+
+        <p>
+          Choose a one-time or recurring gift to help bring mental healthcare within reach across Arkansas.
+        </p>
+      </div>
+
+
+      <div>
+        <div data-zeffy-embed data-form-url="/embed/donation-form/make-a-donation-110"></div>
+
+        <div data-zeffy-embed-fallback style="display:none;">
+          <div style="position:relative;overflow:hidden;height:450px;width:100%;">
+            <iframe
+              title="Donation form powered by Zeffy"
+              style="position:absolute;border:0;top:0;left:0;bottom:0;right:0;width:100%;height:100%;"
+              data-zeffy-embed-src="https://www.zeffy.com/embed/donation-form/make-a-donation-110"
+              allowpaymentrequest
+              allowTransparency="true">
+            </iframe>
           </div>
-          <div class="col-6 col-md-4 col-lg-2 reveal">
-            <div class="donate-tier"><div class="amount">$500</div><p class="small mb-0">Supports multiple counseling vouchers for individuals in need</p></div>
+        </div>
+
+        <script
+          src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
+          onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){
+          el.style.display='block';
+          el.querySelectorAll('iframe[data-zeffy-embed-src]').forEach(function(f){
+          f.src=f.getAttribute('data-zeffy-embed-src');
+          });
+          });">
+        </script>
+      </div>
+
+    </div>
+  </section>
+
+
+</main>
+
+      <!-- ============================================================
+         SITE FOOTER
+         This exact block appears at the bottom of every page.
+         To edit the address, email, phone, or links, update this
+         block on THIS page, then repeat on all other HTML pages.
+         Full instructions: EDITING-GUIDE.md > "How to Change
+         Homepage Wording" (the same steps apply to footer text)
+         ============================================================ -->
+    <footer class="mwc-footer">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="footer-brand mb-2">Mental Wellness Connection</div>
+            <p class="mb-3">Breaking barriers. Building hope. Connecting care. A 501(c)(3) nonprofit based in Bentonville, Arkansas, serving communities statewide.</p>
+            <div class="social-icons" aria-label="Social media links">
+              <a href="#" aria-label="Mental Wellness Connection on Facebook">f</a>
+              <a href="#" aria-label="Mental Wellness Connection on Instagram">ig</a>
+              <a href="#" aria-label="Mental Wellness Connection on LinkedIn">in</a>
+            </div>
           </div>
-          <div class="col-6 col-md-4 col-lg-2 reveal reveal-delay-1">
-            <div class="donate-tier"><div class="amount">$1,000</div><p class="small mb-0">Helps sustain a program area for a full quarter</p></div>
+          <div class="col-6 col-lg-2">
+            <h5>Get Involved</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="get-help.html">Get Help</a></li>
+              <li class="mb-2"><a href="donate.html">Give</a></li>
+              <li class="mb-2"><a href="volunteer.html">Volunteer</a></li>
+              <li class="mb-2"><a href="internships.html">Internships</a></li>
+              <li class="mb-2"><a href="provider-partners.html">Partner With Us</a></li>
+            </ul>
           </div>
-          <div class="col-6 col-md-4 col-lg-2 reveal reveal-delay-2">
-            <div class="donate-tier"><div class="amount">Custom</div><p class="small mb-0">Every amount moves our mission forward</p></div>
+          <div class="col-6 col-lg-2">
+            <h5>Organization</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="about.html">About Us</a></li>
+              <li class="mb-2"><a href="our-focus-areas.html">Our Focus Areas</a></li>
+              <li class="mb-2"><a href="resources.html">Resources</a></li>
+              <li class="mb-2"><a href="faq.html">FAQ</a></li>
+              <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
           </div>
+          <div class="col-lg-4">
+            <h5>Contact</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">Bentonville, Arkansas</li>
+              <li class="mb-2">Serving communities throughout Arkansas</li>
+              <li class="mb-2"><a href="mailto:info@mentalwellnessconnection.org">info@mentalwellnessconnection.org</a></li>
+              <li class="mb-2"><a href="tel:988">Crisis Support: Call or text 988</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <span>&copy; <span id="footer-year">2026</span> Mental Wellness Connection. All rights reserved. EIN available upon request.</span>
+          <span>A 501(c)(3) nonprofit organization</span>
         </div>
       </div>
-    </section>
-
-    <!-- WAYS TO GIVE -->
-    <section class="section bg-soft-blue">
-      <div class="container">
-        <div class="text-center mb-5 reveal">
-          <span class="eyebrow">Ways to Give</span>
-          <h2>Choose the Option That Fits You</h2>
-        </div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="mwc-card">
-              <div class="icon-badge"><svg class="icon icon-lg"><use href="images/icons/icons.svg#coin"></use></svg></div>
-              <h3 class="h5">One-Time Donation</h3>
-              <p class="small">A single gift, any amount, made whenever it fits your budget.</p>
-              <a href="#give" class="btn btn-mwc-outline btn-sm">Give Once</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
-            <div class="mwc-card">
-              <div class="icon-badge teal"><svg class="icon icon-lg"><use href="images/icons/icons.svg#repeat"></use></svg></div>
-              <h3 class="h5">Monthly Giving</h3>
-              <p class="small">Sustained monthly support that helps us plan ahead and serve more people.</p>
-              <a href="#give" class="btn btn-mwc-outline btn-sm">Give Monthly</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
-            <div class="mwc-card">
-              <div class="icon-badge green"><svg class="icon icon-lg"><use href="images/icons/icons.svg#building"></use></svg></div>
-              <h3 class="h5">Corporate Sponsorship</h3>
-              <p class="small">Partner with us as a business to sponsor a program or community event.</p>
-              <a href="contact.html" class="btn btn-mwc-outline btn-sm">Discuss Sponsorship</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 reveal">
-            <div class="mwc-card">
-              <div class="icon-badge gold"><svg class="icon icon-lg"><use href="images/icons/icons.svg#scroll"></use></svg></div>
-              <h3 class="h5">Planned Giving</h3>
-              <p class="small">Include Mental Wellness Connection in your estate or legacy planning.</p>
-              <a href="contact.html" class="btn btn-mwc-outline btn-sm">Contact Us</a>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
-            <div class="mwc-card">
-              <div class="icon-badge"><svg class="icon icon-lg"><use href="images/icons/icons.svg#gift"></use></svg></div>
-              <h3 class="h5">In-Kind Donations</h3>
-              <p class="small">Give goods, services, or professional expertise instead of funds.</p>
-              <a href="contact.html" class="btn btn-mwc-outline btn-sm">Get in Touch</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GIVING FORM -->
-    <section id="give" class="section bg-warm-white">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="text-center mb-4 reveal">
-              <span class="eyebrow">Give Today</span>
-              <h2>Make Your Gift</h2>
-              <p class="text-muted">Submit the form below and our team will follow up with secure payment options, or reach out directly at <a href="mailto:info@mentalwellnessconnection.org">info@mentalwellnessconnection.org</a>.</p>
-            </div>
-            <div class="mwc-form-panel form-embed-wrapper reveal reveal-delay-1">
-              <p class="form-embed-note d-none"><svg class="icon icon-lg"><use href="images/icons/icons.svg#mail"></use></svg><span>Our online form is being finalized. In the meantime, email us at <a href="mailto:info@mentalwellnessconnection.org">info@mentalwellnessconnection.org</a> to make a gift, and we'll follow up right away.</span></p>
-              <iframe class="form-embed-frame" src="PASTE_GOOGLE_FORM_EMBED_URL_HERE" title="Donation Form" loading="lazy" style="min-height:700px;">Loading form…</iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div id="site-footer"></div>
+    </footer>
+    <!-- END SITE FOOTER -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/forms.js"></script>
+  <!-- Powers the "Give Now" popup button in the navigation menu (see EDITING-GUIDE.md) -->
+  <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
+  <!-- Powers the inline giving form embedded above (this script is only needed on this page) -->
+  <script src="https://www.zeffy.com/embed/v2/zeffy-embed.js"></script>
 </body>
 </html>

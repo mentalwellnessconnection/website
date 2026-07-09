@@ -220,19 +220,11 @@ select:focus-visible,
   align-items: center;
   gap: 0.65rem;
 }
-.mwc-navbar .navbar-brand .brand-mark {
+.mwc-navbar .navbar-brand .brand-mark-img {
   width: 36px;
   height: 36px;
-  border-radius: 11px;
-  background: linear-gradient(135deg, var(--mwc-teal), var(--mwc-blue));
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 700;
-  font-family: var(--mwc-font-body);
-  font-size: 0.9rem;
-  box-shadow: 0 4px 12px rgba(44,94,145,0.25);
+  object-fit: contain;
+  display: inline-block;
 }
 .mwc-navbar .nav-link {
   font-weight: 600;
@@ -242,7 +234,9 @@ select:focus-visible,
 }
 .mwc-navbar .nav-link.active,
 .mwc-navbar .nav-link:hover { color: var(--mwc-blue-dark); }
-.mwc-navbar .nav-link.active::after {
+/* :not(.dropdown-toggle) avoids clashing with Bootstrap's caret arrow,
+   which also uses a ::after pseudo-element on dropdown toggle links. */
+.mwc-navbar .nav-link.active:not(.dropdown-toggle)::after {
   content: "";
   position: absolute;
   left: 0.9rem; right: 0.9rem; bottom: 0.2rem;
@@ -251,6 +245,37 @@ select:focus-visible,
   border-radius: 2px;
 }
 .mwc-navbar .nav-cta { margin-left: 0.5rem; }
+
+/* Dropdown menus (How We Help, Get Involved) — styled to match the
+   rest of the site; behavior is handled entirely by Bootstrap's own
+   dropdown JavaScript, already loaded via bootstrap.bundle.min.js. */
+.mwc-navbar .dropdown-menu {
+  border: none;
+  border-radius: var(--mwc-radius-md);
+  box-shadow: var(--mwc-shadow-soft);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+.mwc-navbar .dropdown-item {
+  border-radius: var(--mwc-radius-sm);
+  padding: 0.55rem 1rem;
+  font-weight: 500;
+  color: var(--mwc-gray);
+}
+.mwc-navbar .dropdown-item:hover,
+.mwc-navbar .dropdown-item:focus,
+.mwc-navbar .dropdown-item:active {
+  background-color: var(--mwc-teal-50);
+  color: var(--mwc-blue-dark);
+}
+@media (max-width: 991.98px) {
+  /* On the collapsed mobile menu, dropdown-menus render inline rather
+     than as a floating panel — this keeps them readable there too. */
+  .mwc-navbar .dropdown-menu {
+    box-shadow: none;
+    background-color: rgba(44,94,145,0.04);
+  }
+}
 
 /* ---- Hero ---- */
 .hero {
@@ -660,4 +685,20 @@ select:focus-visible,
   .donate-banner { padding: 2rem; text-align: center; }
   .donate-banner .text-lg-end { text-align: center !important; margin-top: 1rem; }
   .mwc-form-panel { padding: 1.5rem; }
+}
+.brand-logo {
+    height: 45px;
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
+}
+/* Navigation spacing refinement */
+.mwc-navbar .nav-link {
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    letter-spacing: normal;
+    white-space: nowrap;
+}
+.mwc-navbar .navbar-nav {
+    gap: 0.9rem;
 }

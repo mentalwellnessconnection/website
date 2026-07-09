@@ -1,42 +1,51 @@
 /* ==========================================================================
    Mental Wellness Connection — main.js
-   Vanilla JS only. Handles shared nav/footer injection, active-link
-   highlighting, scroll-reveal animation, animated stat counters, and the
-   back-to-top control.
 
-   NOTE: Partial injection uses fetch(), which requires the site to be served
-   over http(s) (GitHub Pages, Firebase Hosting, Cloudflare Pages, or a local
-   dev server). Opening index.html directly via file:// will block fetch()
-   in most browsers — see README.md for a one-line local server command.
+   This file handles small interactive behaviors shared by every page:
+     - Highlighting the current page's link in the navigation menu
+     - Updating the copyright year in the footer automatically
+     - The "back to top" button
+     - Fade-in animations as you scroll down the page
+     - Animated counting-up numbers (used in the homepage stats)
+
+   Note for non-developers: the navigation menu and footer are no longer
+   loaded dynamically — each page now has its own complete copy of the
+   menu and footer HTML directly in the file. That means this script does
+   NOT insert any HTML; it only adds small behaviors to HTML that is
+   already on the page. See EDITING-GUIDE.md for how to edit page content.
    ========================================================================== */
 
 (function () {
   "use strict";
 
-  function injectPartial(url, targetId, afterInject) {
-    var target = document.getElementById(targetId);
-    if (!target) return;
-    fetch(url)
-      .then(function (res) {
-        if (!res.ok) throw new Error("Failed to load " + url);
-        return res.text();
-      })
-      .then(function (html) {
-        target.innerHTML = html;
-        if (typeof afterInject === "function") afterInject();
-      })
-      .catch(function (err) {
-        console.error(err);
-      });
-  }
-
+  // Adds the "active" underline to whichever nav link matches the
+  // current page (based on the data-page attribute on <body> and the
+  // matching data-nav attribute on each nav link). Pages that live
+  // inside the "Get Involved" dropdown (rather than as a top-level
+  // link) fall back to highlighting that dropdown's toggle instead.
   function highlightActiveNav() {
     var current = document.body.getAttribute("data-page");
     if (!current) return;
+
     var link = document.querySelector('.mwc-navbar [data-nav="' + current + '"]');
-    if (link) link.classList.add("active");
+    if (link) {
+      link.classList.add("active");
+      return;
+    }
+
+    var dropdownParents = {
+      "volunteer": "get-involved",
+      "internships": "get-involved",
+      "provider-partners": "get-involved"
+    };
+    var parentKey = dropdownParents[current];
+    if (parentKey) {
+      var parentLink = document.querySelector('.mwc-navbar [data-nav="' + parentKey + '"]');
+      if (parentLink) parentLink.classList.add("active");
+    }
   }
 
+  // Keeps the footer's copyright year current without manual edits.
   function setFooterYear() {
     var el = document.getElementById("footer-year");
     if (el) el.textContent = new Date().getFullYear();
@@ -126,8 +135,8 @@
   }
 
   document.addEventListener("DOMContentLoaded", function () {
-    injectPartial("partials/nav.html", "site-nav", highlightActiveNav);
-    injectPartial("partials/footer.html", "site-footer", setFooterYear);
+    highlightActiveNav();
+    setFooterYear();
     initBackToTop();
     initScrollReveal();
     initCounters();

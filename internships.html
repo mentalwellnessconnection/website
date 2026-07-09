@@ -10,7 +10,7 @@
   <meta property="og:description" content="Supervised graduate counseling internships and practicum placements.">
   <meta property="og:url" content="https://www.mentalwellnessconnection.org/internships.html">
   <link rel="canonical" href="https://www.mentalwellnessconnection.org/internships.html">
-  <link rel="icon" href="images/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/icons/favicon.png" type="image/png">
   <link rel="manifest" href="manifest.json">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,14 +20,89 @@
   <link href="css/animations.css" rel="stylesheet">
 </head>
 <body data-page="internships">
-  <div id="site-nav"></div>
+    <!-- ============================================================
+         NEW TO THIS FILE? Start with EDITING-GUIDE.md in the project
+         root folder — it has step-by-step instructions for common
+         changes (wording, photos, logo, adding a page, publishing).
+         ============================================================ -->
+
+      <!-- ============================================================
+         SITE NAVIGATION MENU
+         This exact block appears near the top of every page.
+         To add, rename, or remove a menu item, edit the <li> list
+         below on THIS page, then repeat the same edit on all other
+         HTML pages so the menu stays identical site-wide.
+         Full instructions: EDITING-GUIDE.md > "How to Update the
+         Navigation Menu"
+         ============================================================ -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <nav class="navbar navbar-expand-lg mwc-navbar fixed-top" aria-label="Primary">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <!-- Logo icon — see EDITING-GUIDE.md > "How to Change the Logo" -->
+          <img src="images/logo/mwc-icon.png" alt="" class="brand-mark-img" aria-hidden="true">
+          Mental Wellness Connection
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mwcNav"
+          aria-controls="mwcNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mwcNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" data-nav="about" href="about.html">About</a></li>
+
+            <!-- Dropdown: How We Help -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="howWeHelpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-nav="focus-areas">How We Help</a>
+              <ul class="dropdown-menu" aria-labelledby="howWeHelpDropdown">
+                <li><a class="dropdown-item" href="our-focus-areas.html">Our Focus Areas</a></li>
+                <li><a class="dropdown-item" href="our-focus-areas.html#awareness">Awareness</a></li>
+                <li><a class="dropdown-item" href="our-focus-areas.html#active-living">Active Living</a></li>
+                <li><a class="dropdown-item" href="our-focus-areas.html#access">Access to Care</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" data-nav="get-help" href="get-help.html">Get Help</a></li>
+
+            <!-- Dropdown: Get Involved -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="getInvolvedDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-nav="get-involved">Get Involved</a>
+              <ul class="dropdown-menu" aria-labelledby="getInvolvedDropdown">
+                <li><a class="dropdown-item" href="volunteer.html">Volunteer</a></li>
+                <li><a class="dropdown-item" href="internships.html">Counseling Internships</a></li>
+                <li><a class="dropdown-item" href="provider-partners.html">Clinical Providers</a></li>
+                <li><a class="dropdown-item" href="provider-partners.html#community-organizations">Community Organizations</a></li>
+                <li><a class="dropdown-item" href="donate.html#sponsorship">Sponsorships</a></li>
+              </ul>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" data-nav="events" href="events.html">Events</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav="resources" href="resources.html">Resources</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav="donate" href="donate.html">Give</a></li>
+            <li class="nav-item"><a class="nav-link" data-nav="contact" href="contact.html">Contact</a></li>
+            <li class="nav-item nav-cta">
+              <!-- "Give Now" opens the Zeffy giving form in a popup — see EDITING-GUIDE.md
+                   for how to update the Zeffy form link if the campaign URL ever changes. -->
+              <a class="btn btn-mwc-primary btn-sm"
+                 href="https://www.zeffy.com/embed/ticketing/mental-wellness-connection-memberships--2025?modal=true"
+                 zeffy-form-link="https://www.zeffy.com/embed/ticketing/mental-wellness-connection-memberships--2025?modal=true"
+                 rel="noopener">Give Now</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+    <!-- END SITE NAVIGATION MENU -->
 
   <main id="main-content">
     <section class="page-header">
       <div class="container">
+        <!-- EDIT HERE: page title and intro text -->
         <span class="eyebrow" style="color:#CFE3E2;">Internships</span>
         <h1>Train as a Counselor. Serve Your Community.</h1>
         <p class="lead" style="max-width:60ch;">Graduate counseling students are invited to apply for practicum and internship placements with real clinical experience and dedicated supervision.</p>
+        <!-- END EDIT HERE -->
         <a href="#apply" class="btn btn-mwc-primary btn-lg mt-2">Apply for an Internship</a>
       </div>
     </section>
@@ -124,9 +199,68 @@
     </section>
   </main>
 
-  <div id="site-footer"></div>
+      <!-- ============================================================
+         SITE FOOTER
+         This exact block appears at the bottom of every page.
+         To edit the address, email, phone, or links, update this
+         block on THIS page, then repeat on all other HTML pages.
+         Full instructions: EDITING-GUIDE.md > "How to Change
+         Homepage Wording" (the same steps apply to footer text)
+         ============================================================ -->
+    <footer class="mwc-footer">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-4">
+            <div class="footer-brand mb-2">Mental Wellness Connection</div>
+            <p class="mb-3">Breaking barriers. Building hope. Connecting care. A 501(c)(3) nonprofit based in Bentonville, Arkansas, serving communities statewide.</p>
+            <div class="social-icons" aria-label="Social media links">
+              <a href="#" aria-label="Mental Wellness Connection on Facebook">f</a>
+              <a href="#" aria-label="Mental Wellness Connection on Instagram">ig</a>
+              <a href="#" aria-label="Mental Wellness Connection on LinkedIn">in</a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Get Involved</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="get-help.html">Get Help</a></li>
+              <li class="mb-2"><a href="donate.html">Give</a></li>
+              <li class="mb-2"><a href="volunteer.html">Volunteer</a></li>
+              <li class="mb-2"><a href="internships.html">Internships</a></li>
+              <li class="mb-2"><a href="provider-partners.html">Partner With Us</a></li>
+            </ul>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Organization</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2"><a href="about.html">About Us</a></li>
+              <li class="mb-2"><a href="our-focus-areas.html">Our Focus Areas</a></li>
+              <li class="mb-2"><a href="resources.html">Resources</a></li>
+              <li class="mb-2"><a href="faq.html">FAQ</a></li>
+              <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h5>Contact</h5>
+            <ul class="list-unstyled">
+              <li class="mb-2">Bentonville, Arkansas</li>
+              <li class="mb-2">Serving communities throughout Arkansas</li>
+              <li class="mb-2"><a href="mailto:info@mentalwellnessconnection.org">info@mentalwellnessconnection.org</a></li>
+              <li class="mb-2"><a href="tel:988">Crisis Support: Call or text 988</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+          <span>&copy; <span id="footer-year">2026</span> Mental Wellness Connection. All rights reserved. EIN available upon request.</span>
+          <span>A 501(c)(3) nonprofit organization</span>
+        </div>
+      </div>
+    </footer>
+    <!-- END SITE FOOTER -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&uarr;</button>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/forms.js"></script>
+  <!-- Powers the "Give Now" popup button in the navigation menu (see EDITING-GUIDE.md) -->
+  <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
 </body>
 </html>

@@ -2,17 +2,36 @@
 
 A production-ready, static, accessible, SEO-optimized website for Mental Wellness Connection (MWC), built with HTML5, CSS3, Bootstrap 5, and vanilla JavaScript. No frameworks, build tools, or backend required.
 
+**New to editing this site?** See **[EDITING-GUIDE.md](./EDITING-GUIDE.md)** for step-by-step, non-developer instructions on changing wording, photos, the logo, adding pages, and publishing through GitHub Desktop. This README is the technical overview.
+
+---
+
+## What Kind of Website Is This?
+
+This website is a **static HTML website** hosted through **GitHub Pages**. That means:
+
+- There is no database and no server-side code (no PHP, no Node, no WordPress admin panel).
+- Every page is a plain `.html` file that a web browser can read directly.
+- Changes are made by editing these files with a text/code editor — this project is set up for **Visual Studio Code**.
+- Changes are published to the live site by committing and pushing them to GitHub — this project is set up for **GitHub Desktop**, so no command-line experience is required.
+- GitHub Pages automatically rebuilds the live site within a minute or two of every push.
+
+This setup keeps hosting costs at $0 and makes the site easy to maintain long-term without needing a developer for routine content updates.
+
+---
+
 ## Project Structure
 
 ```
 Mental-Wellness-Connection/
 ├── index.html
 ├── about.html
-├── programs.html
+├── our-focus-areas.html
 ├── get-help.html
 ├── provider-partners.html
 ├── internships.html
 ├── volunteer.html
+├── events.html
 ├── donate.html
 ├── resources.html
 ├── contact.html
@@ -21,96 +40,49 @@ Mental-Wellness-Connection/
 ├── manifest.json
 ├── robots.txt
 ├── sitemap.xml
+├── EDITING-GUIDE.md
 ├── css/
-│   ├── style.css
-│   └── animations.css
+│   ├── style.css          (brand colors, typography, components)
+│   └── animations.css     (scroll-reveal and motion effects)
 ├── js/
-│   ├── main.js
-│   └── forms.js
-├── partials/
-│   ├── nav.html          (shared navigation, injected via fetch)
-│   └── footer.html       (shared footer, injected via fetch)
+│   ├── main.js             (nav highlighting, footer year, back-to-top, scroll reveal, counters)
+│   └── forms.js            (Google Form embed handling, newsletter signup)
 └── images/
-    ├── icons/favicon.svg (placeholder mark — swap for your logo)
-    └── assets/           (add photography here)
+    ├── logo/                (official logo files — see below)
+    ├── hero/                (homepage/banner photos — currently empty, ready for real photography)
+    ├── team/                (staff/board photos — currently empty)
+    ├── events/              (volunteer/community event photos — currently empty)
+    ├── partners/            (partner & university logos — currently empty)
+    └── icons/               (icon sprite + favicon — no need to touch)
 ```
 
-Nav and footer live in one place (`partials/`) and are injected into every page by `js/main.js`, so there's no duplicated markup to maintain across 12 pages.
+### No partials system
+
+Earlier versions of this site loaded a shared navigation menu and footer from a `partials/` folder using JavaScript (`fetch()`). That system has been **removed** for maintainability: the complete navigation menu and complete footer are now written directly into every one of the 13 HTML pages. There is no `partials/` folder anymore, and `main.js` no longer performs any `fetch()` calls.
+
+**Trade-off to know about:** because the nav/footer are duplicated across files instead of loaded from one shared source, updating the menu or footer requires editing all 13 pages identically. EDITING-GUIDE.md explains the fastest way to do that (VS Code's "Search and Replace across files").
+
+### Logo files
+
+Official logo assets live in `images/logo/`:
+- `mwc-icon.png` — icon only, used in the navigation bar and as the site favicon (`images/icons/favicon.png`)
+- `mwc-main-logo.png` — full lockup (icon + horizontal wordmark), used in the homepage structured data (SEO)
+- `mwc-wordmark-horizontal-gray.png`, `mwc-wordmark-stacked-blue.png`, `mwc-wordmark-stacked-gray.png` — text-only wordmark variants, available for future use (letterhead-style pages, print exports, etc.)
 
 ---
 
-## 1. Before You Launch — Required Steps
+## Deployment
 
-### A. Add your logo and photography
-The site currently uses styled placeholder blocks (dashed borders, labeled) everywhere a real photo or logo belongs, so the layout is fully visible without real assets. Once you upload files:
-
-1. Drop images into `images/assets/`
-2. Replace each `<div class="hero-image-slot">` / `<div class="img-slot">` with an `<img>` tag, e.g.:
-   ```html
-   <img src="images/assets/hero-counseling-session.jpg" alt="A counselor and client in a warm, private counseling session" class="rounded-xl w-100" loading="lazy">
-   ```
-3. Replace `images/icons/favicon.svg` with your real logo mark (SVG preferred), and update the `<span class="brand-mark">` in `partials/nav.html` if you have a horizontal logo lockup instead.
-
-**Suggested image list:**
-
-| Image | Suggested dimensions | Used on |
-|---|---|---|
-| Homepage hero photo | 1200×900px | index.html |
-| "Why We Exist" photo | 1000×800px | index.html |
-| Volunteer event photo | 900×700px | index.html |
-| Founder / team photo | 1000×900px | about.html |
-| Counseling session photo | 900×700px | programs.html, get-help.html |
-| Supervision / training photo | 900×700px | programs.html, internships.html |
-| Provider network / clinic photo | 900×700px | programs.html |
-| Community outreach photo | 900×700px | programs.html |
-| Open Graph share image | 1200×630px | all pages (`og:image`) |
-| Favicon / logo mark | SVG, square | all pages |
-| Partner & university logos | 200×80px, transparent PNG/SVG | index.html, resources.html, internships.html |
-
-### B. Build and connect your Google Forms
-Every form on the site (Get Help, Provider Partners, Internships, Volunteer, Donate, Contact) is a placeholder `<iframe>`:
-
-```html
-<iframe class="form-embed-frame" src="PASTE_GOOGLE_FORM_EMBED_URL_HERE" ...>
-```
-
-To connect a real form under `info@mentalwellnessconnection.com`:
-1. Build the form at [forms.google.com](https://forms.google.com)
-2. Click **Send** → the **Embed** tab (`<>`) → copy the URL inside `src="..."`
-3. Replace `PASTE_GOOGLE_FORM_EMBED_URL_HERE` in that page's `<iframe src="...">` with the copied URL
-
-No JavaScript changes are needed — `js/forms.js` automatically hides the placeholder notice once a real URL is in place.
-
-### C. Update the Google Map
-`contact.html` has a placeholder map block. Once your office address is finalized, get an embed `<iframe>` from Google Maps ("Share" → "Embed a map") and drop it into the marked section.
-
-### D. Update domain references
-`index.html` (JSON-LD), all `<link rel="canonical">` tags, `og:url` tags, and `sitemap.xml` currently reference `https://www.mentalwellnessconnection.org/`. Update these to your actual domain once it's live.
-
-### E. Legal review
-`privacy.html` is a starting framework, not legal advice — have it reviewed by counsel before publishing.
-
----
-
-## 2. Deployment
-
-### GitHub Pages (primary target)
-1. Create a new GitHub repository, e.g. `mental-wellness-connection`
-2. Push this folder's contents to the repository root (or to a `/docs` folder if you prefer)
-3. In the repo: **Settings → Pages → Source** → select the branch (`main`) and folder (`/root` or `/docs`)
-4. GitHub will publish at `https://<username>.github.io/mental-wellness-connection/`
-5. To use a custom domain (e.g. `mentalwellnessconnection.org`):
-   - Add a file named `CNAME` at the repo root containing just your domain, e.g. `mentalwellnessconnection.org`
-   - Add the DNS records GitHub specifies (A records for an apex domain, or a CNAME record for a subdomain) at your domain registrar
-
-```bash
-git init
-git add .
-git commit -m "Initial site launch"
-git branch -M main
-git remote add origin https://github.com/<your-username>/mental-wellness-connection.git
-git push -u origin main
-```
+### GitHub Pages (current host)
+This site is already deployed via GitHub Pages. To publish future changes:
+- **Non-developers:** use GitHub Desktop — see EDITING-GUIDE.md.
+- **Command line:**
+  ```bash
+  git add .
+  git commit -m "Describe your change"
+  git push origin main
+  ```
+GitHub Pages rebuilds automatically after every push to the branch configured in **Settings → Pages**.
 
 ### Firebase Hosting (alternative)
 ```bash
@@ -123,14 +95,14 @@ firebase deploy
 ### Cloudflare Pages (alternative)
 1. Push the project to a GitHub repository (as above)
 2. In the Cloudflare dashboard: **Workers & Pages → Create → Pages → Connect to Git**
-3. Select the repository; leave the build command blank and set the output directory to `/` (or wherever `index.html` lives)
+3. Leave the build command blank; set the output directory to `/`
 4. Deploy
 
 ---
 
-## 3. Local Preview
+## Local Preview
 
-Because nav/footer are injected via `fetch()`, opening `index.html` directly from your file system (`file://...`) will fail silently in most browsers due to CORS restrictions on local files. Serve the folder locally instead:
+Because forms and some behaviors rely on standard browser features, the simplest local preview is the VS Code **Live Server** extension (see EDITING-GUIDE.md), or:
 
 ```bash
 # Python 3
@@ -139,26 +111,35 @@ python3 -m http.server 8000
 # or Node
 npx serve .
 ```
-
 Then visit `http://localhost:8000`.
 
 ---
 
-## 4. Accessibility & SEO Notes
+## Giving & Donations (Zeffy)
 
-- Every page includes a skip-to-content link, visible focus states, and `prefers-reduced-motion` support.
-- Heading hierarchy is consistent (one `<h1>` per page, nested `<h2>`/`<h3>`).
-- All interactive form embeds include a descriptive `title` attribute; add real `alt` text to every photo you add.
-- Each page has a unique title tag, meta description, Open Graph tags, and canonical URL. `index.html` and `faq.html` include JSON-LD structured data (Organization and FAQPage schema).
-- Run a Lighthouse audit after adding real images (compressed, appropriately sized) to confirm you're hitting the 95+ performance target — large uncompressed photos are the most common thing that drags this down.
+Online giving is powered by [Zeffy](https://www.zeffy.com/) (a free-for-nonprofits donation platform), integrated in three places:
+
+1. A **"Give Now" button** in the navigation menu on every page — opens the Zeffy giving form in a popup.
+2. A **"Become a Monthly Supporter" button** on `donate.html` — same popup behavior, tied to the same campaign.
+3. An **inline embedded giving form** on `donate.html` — renders directly on the page via Zeffy's embed script, with a plain `<iframe>` fallback inside a `<noscript>` tag for visitors without JavaScript.
+
+All three currently point to the `mental-wellness-connection-memberships--2025` campaign. See EDITING-GUIDE.md > "How to Update the Zeffy Giving/Membership Form" for how to change this later.
 
 ---
 
-## 5. What to Send Claude Next (optional)
+## Still To Do Before Full Launch
 
-If you'd like a follow-up pass, it's most efficient to provide:
-- Final logo files (SVG + PNG) and brand photography
-- Real testimonials/quotes with permission to publish
-- Verified impact statistics (once available)
-- Your finalized Google Form embed URLs
-- Final office address for the map embed
+1. **Photos** — `images/hero/`, `images/team/`, `images/events/`, and `images/partners/` are currently empty. Each contains a short README.txt with suggested sizes. See EDITING-GUIDE.md > "How to Replace Photos."
+2. **Google Forms** — Get Help, Provider Partners, Internships, Volunteer, and Contact each have a placeholder form embed (`PASTE_GOOGLE_FORM_EMBED_URL_HERE`). Build each form at forms.google.com under `info@mentalwellnessconnection.com` and paste in the real embed URL — no other code changes needed. (Giving/donations on `donate.html` are already live via Zeffy — see below, not a placeholder.)
+3. **Domain confirmation** — site copy currently uses `info@mentalwellnessconnection.org`; confirm this matches your live domain/email before launch.
+4. **Legal review** — `privacy.html` is a starting framework, not legal advice; have it reviewed by counsel before publishing.
+5. **Google Map** — `contact.html` has a "Find Us" panel ready to be swapped for a live embedded map once you're ready (see the HTML comment in that file).
+
+---
+
+## Accessibility & SEO Notes
+
+- Every page includes a skip-to-content link, visible focus states, and `prefers-reduced-motion` support.
+- Heading hierarchy is consistent (one `<h1>` per page).
+- Each page has a unique title tag, meta description, Open Graph tags, and canonical URL. `index.html` and `faq.html` include JSON-LD structured data (Organization and FAQPage schema).
+- Run a Lighthouse audit after adding real photos (compressed, appropriately sized) — large uncompressed images are the most common thing that hurts performance scores.
