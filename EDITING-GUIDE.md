@@ -111,24 +111,18 @@ Your official logo files already live in `images/logo/`:
 
 | File | What it is |
 |---|---|
-| `mwc-icon.png` | Icon only (sprout in bowl) — used in the navigation menu on every page except the homepage |
-| `mwc-main-logo.png` | Full logo (icon + horizontal wordmark) — used in the navigation menu on the **homepage only** |
+| `mwc-main-logo.png` | Full logo (icon + horizontal wordmark) — used in the navigation menu on **every page** |
+| `mwc-icon.png` | Icon only (sprout in bowl) — not currently used in navigation, kept for other uses (e.g. favicon source) |
 | `mwc-wordmark-horizontal-gray.png` | Text only, horizontal, gray |
 | `MWC-WordmarkHorizontal-Blue.png` | Text only, horizontal, blue |
 | `mwc-wordmark-stacked-blue.png` | Text only, stacked, light blue |
 | `mwc-wordmark-stacked-gray.png` | Text only, stacked, dark gray |
 
-**Note:** the homepage (`index.html`) intentionally shows the full logo (`mwc-main-logo.png`, sized by the `.brand-logo` CSS class) instead of the small icon + text used on every other page. This is a deliberate design choice — if you update the logo, remember `index.html` and the other 12 pages use two different `<img>` lines (see below), so a like-for-like replacement needs to happen in both places.
-
-The small icon in the navigation bar on every page **except the homepage** pulls from `mwc-icon.png`:
-```html
-<img src="images/logo/mwc-icon.png" alt="" class="brand-mark-img" aria-hidden="true">
-```
-The homepage's navigation bar pulls from `mwc-main-logo.png` instead:
+Every page's navigation bar uses the same line:
 ```html
 <img src="images/logo/mwc-main-logo.png" alt="Mental Wellness Connection" class="brand-logo">
 ```
-To use a different version, replace the file name in the relevant line — you'll need to make the same change across **all 13 pages** that use the same treatment (see "How to Update the Navigation Menu" below for the easiest way to do a change like this everywhere at once).
+To use a different version, replace the file name in that line — you'll need to make the same change across **all 13 pages** (see "How to Update the Navigation Menu" below for the easiest way to do a change like this everywhere at once, since the logo line is now identical on every page).
 
 To replace a logo file itself with an updated version: just save the new file into `images/logo/` using the **exact same file name** as the one you're replacing, and it will update everywhere automatically.
 
@@ -155,9 +149,9 @@ The navigation menu is repeated at the top of all 13 pages (there's no shared fi
    <li class="nav-item dropdown">
      <a class="nav-link dropdown-toggle" href="#" id="howWeHelpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-nav="focus-areas">How We Help</a>
      <ul class="dropdown-menu" aria-labelledby="howWeHelpDropdown">
-       <li><a class="dropdown-item" href="our-focus-areas.html">Our Focus Areas</a></li>
        <li><a class="dropdown-item" href="our-focus-areas.html#awareness">Awareness</a></li>
-       ...
+       <li><a class="dropdown-item" href="our-focus-areas.html#active-living">Active Living</a></li>
+       <li><a class="dropdown-item" href="our-focus-areas.html#access">Access to Care</a></li>
      </ul>
    </li>
    ```
@@ -166,7 +160,6 @@ The navigation menu is repeated at the top of all 13 pages (there's no shared fi
    - Press **Ctrl+Shift+F** (Windows) or **Cmd+Shift+F** (Mac) to open "Search across all files."
    - Type the exact old text you want to replace, and the new text, and use **"Replace All"**.
    - Double-check each result before confirming — this affects every file at once.
-   - **Heads up:** `index.html`'s navigation bar uses a different logo image than the other 12 pages (see "How to Change the Logo" above). A find-and-replace of the *menu links* won't touch the logo, but don't copy the whole navigation block from `index.html` as your template for other pages, or vice versa — copy from a non-homepage page (like `about.html`) instead.
 
 ---
 
@@ -182,17 +175,18 @@ The navigation menu is repeated at the top of all 13 pages (there's no shared fi
 
 ---
 
-## How to Update the Zeffy Giving/Membership Form
+## How to Update the Zeffy Giving Form
 
-Online giving runs through **Zeffy** (a free donation platform). There are three places that reference your Zeffy campaign, and they all need to match if you ever start a new campaign or change the URL:
+Online giving runs through **Zeffy** (a free donation platform). There are two places that reference your Zeffy campaign, and they use two different URL formats — both need to match if you ever start a new campaign:
 
-1. **The "Give Now" button in the navigation menu** — appears on all 13 pages. Search for `zeffy-form-link=` (Ctrl+Shift+F / Cmd+Shift+F to search across all files) and you'll find two attributes on the same button that both need the new URL: `href="..."` and `zeffy-form-link="..."`.
-2. **The "Become a Monthly Supporter" button** on `donate.html` — same two attributes, same pattern.
-3. **The embedded giving form** on `donate.html` — look for `data-zeffy-embed data-form-url="..."`. This one uses a shorter path (starting with `/embed/...`), not the full `https://www.zeffy.com/...` URL used by the other two.
+1. **The "Give Now" button in the navigation menu** — appears on all 13 pages. Search for `zeffy-form-link=` (Ctrl+Shift+F / Cmd+Shift+F to search across all files) and you'll find two attributes on the same button:
+   - `href="https://www.zeffy.com/en-US/donation-form/..."` — a plain link, used as a backup in case the popup script doesn't load
+   - `zeffy-form-link="https://www.zeffy.com/embed/donation-form/...?modal=true"` — used by Zeffy's script to open the popup
+2. **The embedded giving form** on `donate.html` — look for `data-zeffy-embed data-form-url="/embed/donation-form/..."` (a short path, not the full `https://www.zeffy.com/...` URL), plus a matching `data-zeffy-embed-src="https://www.zeffy.com/embed/donation-form/..."` a few lines below it (used only if the embed script fails to load).
 
-All three currently point to Mental Wellness Connection's `mental-wellness-connection-memberships--2025` campaign on Zeffy. If you create a new Zeffy campaign or ticketing page, get its embed/link URLs from your Zeffy dashboard and swap them into these three spots (find-and-replace across all files, then double-check `donate.html` separately for its embed line).
+All of these currently point to Mental Wellness Connection's `make-a-donation-110` campaign on Zeffy. If you ever create a new Zeffy campaign, get its link from your Zeffy dashboard and swap it into all four spots above (find-and-replace across all files, then double-check `donate.html` separately for its two embed-related lines).
 
-You do not need to touch any `.js` file — the popup and embed behavior are both powered by Zeffy's own scripts, which are already loaded on every page.
+You do not need to touch any `.js` file — the popup and embed behavior are both powered by Zeffy's own scripts, which are already loaded on every page (or, for the embed, only on `donate.html`).
 
 ---
 

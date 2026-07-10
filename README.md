@@ -117,13 +117,12 @@ Then visit `http://localhost:8000`.
 
 ## Giving & Donations (Zeffy)
 
-Online giving is powered by [Zeffy](https://www.zeffy.com/) (a free-for-nonprofits donation platform), integrated in three places:
+Online giving is powered by [Zeffy](https://www.zeffy.com/) (a free-for-nonprofits donation platform), integrated in two places:
 
-1. A **"Give Now" button** in the navigation menu on every page — opens the Zeffy giving form in a popup.
-2. A **"Become a Monthly Supporter" button** on `donate.html` — same popup behavior, tied to the same campaign.
-3. An **inline embedded giving form** on `donate.html` — renders directly on the page via Zeffy's embed script, with a plain `<iframe>` fallback inside a `<noscript>` tag for visitors without JavaScript.
+1. A **"Give Now" button** in the navigation menu on every page — opens the Zeffy donation form in a popup. If Zeffy's popup script fails to load, the button's plain `href` link takes the visitor to the same form as a normal page instead.
+2. An **inline embedded giving form** on `donate.html` — renders directly on the page via Zeffy's embed script, with a plain `<iframe>` fallback that only activates if the embed script itself fails to load.
 
-All three currently point to the `mental-wellness-connection-memberships--2025` campaign. See EDITING-GUIDE.md > "How to Update the Zeffy Giving/Membership Form" for how to change this later.
+Both currently point to the `make-a-donation-110` campaign. See EDITING-GUIDE.md > "How to Update the Zeffy Giving Form" for how to change this later.
 
 ---
 
@@ -131,9 +130,8 @@ All three currently point to the `mental-wellness-connection-memberships--2025` 
 
 1. **Photos** — `images/hero/`, `images/team/`, `images/events/`, and `images/partners/` are currently empty. Each contains a short README.txt with suggested sizes. See EDITING-GUIDE.md > "How to Replace Photos."
 2. **Google Forms** — Get Help, Provider Partners, Internships, Volunteer, and Contact each have a placeholder form embed (`PASTE_GOOGLE_FORM_EMBED_URL_HERE`). Build each form at forms.google.com under `info@mentalwellnessconnection.com` and paste in the real embed URL — no other code changes needed. (Giving/donations on `donate.html` are already live via Zeffy — see below, not a placeholder.)
-3. **Domain confirmation** — site copy currently uses `info@mentalwellnessconnection.org`; confirm this matches your live domain/email before launch.
-4. **Legal review** — `privacy.html` is a starting framework, not legal advice; have it reviewed by counsel before publishing.
-5. **Google Map** — `contact.html` has a "Find Us" panel ready to be swapped for a live embedded map once you're ready (see the HTML comment in that file).
+3. **Legal review** — `privacy.html` is a starting framework, not legal advice; have it reviewed by counsel before publishing.
+4. **Google Map** — `contact.html` has a "Find Us" panel ready to be swapped for a live embedded map once you're ready (see the HTML comment in that file).
 
 ---
 

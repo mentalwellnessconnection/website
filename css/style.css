@@ -97,10 +97,10 @@ select:focus-visible,
 }
 .skip-link:focus { left: 0; }
 
-.section { padding: 5.5rem 0; position: relative; }
-.section-sm { padding: 3.25rem 0; position: relative; }
+.section { padding: 4.75rem 0; position: relative; }
+.section-sm { padding: 3rem 0; position: relative; }
 @media (max-width: 767.98px) {
-  .section { padding: 3.5rem 0; }
+  .section { padding: 3.25rem 0; }
   .section-sm { padding: 2.5rem 0; }
 }
 
@@ -229,7 +229,7 @@ select:focus-visible,
 .mwc-navbar .nav-link {
   font-weight: 600;
   color: var(--mwc-gray);
-  padding: 0.55rem 0.9rem !important;
+  padding: 0.55rem 0.65rem !important;
   position: relative;
 }
 .mwc-navbar .nav-link.active,
@@ -283,7 +283,7 @@ select:focus-visible,
   color: #fff;
   background: linear-gradient(125deg, var(--mwc-blue-dark) 0%, var(--mwc-blue) 52%, var(--mwc-teal-dark) 100%);
   overflow: hidden;
-  padding: 8rem 0 6.5rem;
+  padding: 7rem 0 5.5rem;
 }
 .hero::after {
   content: "";
@@ -317,7 +317,7 @@ select:focus-visible,
 .page-header {
   background: linear-gradient(125deg, var(--mwc-blue-dark), var(--mwc-teal-dark));
   color: #fff;
-  padding: 5rem 0 6rem;
+  padding: 4.5rem 0 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -692,13 +692,20 @@ select:focus-visible,
     max-width: 260px;
     object-fit: contain;
 }
+@media (max-width: 400px) {
+  .brand-logo {
+    height: 36px;
+    max-width: 190px;
+  }
+}
 /* Navigation spacing refinement */
 .mwc-navbar .nav-link {
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
     letter-spacing: normal;
     white-space: nowrap;
 }
 .mwc-navbar .navbar-nav {
-    gap: 0.9rem;
+    gap: 0.4rem;
+}
+@media (max-width: 1200px) {
+  .mwc-navbar .nav-link { font-size: 0.94rem; }
 }

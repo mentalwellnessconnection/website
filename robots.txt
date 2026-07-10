@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.mentalwellnessconnection.org/sitemap.xml
+Sitemap: https://www.mentalwellnessconnection.com/sitemap.xml

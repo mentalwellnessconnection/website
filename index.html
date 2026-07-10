@@ -82,13 +82,13 @@
         </button>
         <div class="collapse navbar-collapse" id="mwcNav">
           <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" data-nav="home" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" data-nav="about" href="about.html">About</a></li>
 
             <!-- Dropdown: How We Help -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="howWeHelpDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-nav="focus-areas">How We Help</a>
               <ul class="dropdown-menu" aria-labelledby="howWeHelpDropdown">
-                <li><a class="dropdown-item" href="our-focus-areas.html">Our Focus Areas</a></li>
                 <li><a class="dropdown-item" href="our-focus-areas.html#awareness">Awareness</a></li>
                 <li><a class="dropdown-item" href="our-focus-areas.html#active-living">Active Living</a></li>
                 <li><a class="dropdown-item" href="our-focus-areas.html#access">Access to Care</a></li>
@@ -105,7 +105,7 @@
                 <li><a class="dropdown-item" href="internships.html">Counseling Internships</a></li>
                 <li><a class="dropdown-item" href="provider-partners.html">Clinical Providers</a></li>
                 <li><a class="dropdown-item" href="provider-partners.html#community-organizations">Community Organizations</a></li>
-                <li><a class="dropdown-item" href="donate.html#sponsorship">Sponsorships</a></li>
+                <li><a class="dropdown-item" href="contact.html">Sponsorships</a></li>
               </ul>
             </li>
 
@@ -114,16 +114,17 @@
             <li class="nav-item"><a class="nav-link" data-nav="donate" href="donate.html">Give</a></li>
             <li class="nav-item"><a class="nav-link" data-nav="contact" href="contact.html">Contact</a></li>
             <li class="nav-item nav-cta">
-              <!-- "Give Now" opens the Zeffy giving form in a popup — see EDITING-GUIDE.md
-                   for how to update the Zeffy form link if the campaign URL ever changes. -->
-              <a
-    href="https://www.zeffy.com/en-US/donation-form/make-a-donation-110"
-    zeffy-form-link="https://www.zeffy.com/embed/donation-form/make-a-donation-110?modal=true"
-    class="btn btn-mwc-primary ms-lg-3">
-    Give Now
-</a>
+              <!-- "Give Now" opens the Zeffy giving form in a popup. If JavaScript
+                   fails to load, the href below takes visitors to the same form
+                   as a normal page instead. See EDITING-GUIDE.md for how to
+                   update the Zeffy campaign URL if it ever changes. -->
+              <a class="btn btn-mwc-primary btn-sm"
+                 href="https://www.zeffy.com/en-US/donation-form/make-a-donation-110"
+                 zeffy-form-link="https://www.zeffy.com/embed/donation-form/make-a-donation-110?modal=true"
+                 rel="noopener">Give Now</a>
             </li>
           </ul>
+
 
         </div>
       </div>
@@ -232,7 +233,7 @@
               <div class="icon-badge"><svg class="icon icon-lg"><use href="images/icons/icons.svg#compass"></use></svg></div>
               <h3 class="h5">Awareness</h3>
               <p class="flex-grow-1">Building awareness of mental health needs, resources, and solutions through education, assessments, safety planning, and referral networks.</p>
-              <a href="our-focus-areas.html#awareness">Learn more &rarr;</a>
+              <a href="our-focus-areas.html#awareness" class="mt-auto">Learn more &rarr;</a>
             </div>
           </div>
           <div class="col-md-4 reveal reveal-delay-1">
@@ -240,7 +241,7 @@
               <div class="icon-badge green"><svg class="icon icon-lg"><use href="images/icons/icons.svg#route"></use></svg></div>
               <h3 class="h5">Active Living</h3>
               <p class="flex-grow-1">Encouraging active living and community connection through wellness events, activities, and opportunities to connect.</p>
-              <a href="our-focus-areas.html#active-living">Learn more &rarr;</a>
+              <a href="our-focus-areas.html#active-living" class="mt-auto">Learn more &rarr;</a>
             </div>
           </div>
           <div class="col-md-4 reveal reveal-delay-2">
@@ -248,7 +249,7 @@
               <div class="icon-badge teal"><svg class="icon icon-lg"><use href="images/icons/icons.svg#heart"></use></svg></div>
               <h3 class="h5">Access to Care</h3>
               <p class="flex-grow-1">Expanding access to free and low-cost outpatient mental healthcare through vouchers, graduate interns, and provider partners.</p>
-              <a href="our-focus-areas.html#access">Learn more &rarr;</a>
+              <a href="our-focus-areas.html#access" class="mt-auto">Learn more &rarr;</a>
             </div>
           </div>
         </div>
